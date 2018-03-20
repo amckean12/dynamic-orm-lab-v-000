@@ -53,4 +53,9 @@ require 'active_support/inflector'
       sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
       DB[:conn].execute(sql)
     end
+
+    def self.find_by
+      value = attribute_hash.values.first
+      formatted_value = value.class == Fixnum ? value : 
+    end
 end
