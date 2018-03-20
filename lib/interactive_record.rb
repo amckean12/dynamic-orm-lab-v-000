@@ -31,6 +31,10 @@ require 'active_support/inflector'
       self.class.table_name
     end
 
+    def cool_names_for_insert
+      self.class.column_names
+    end
+
     def save
 
     end
