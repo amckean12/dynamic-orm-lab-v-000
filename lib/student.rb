@@ -9,7 +9,7 @@ class Student < InteractiveRecord
       self.send("#{property}=", value)
     end
   end
-  
+
   def self.table_name
     self.to_s.downcase.pluralize
   end
@@ -27,4 +27,8 @@ class Student < InteractiveRecord
     end
     column_names.compact
   end
+  def self.attr_accessor
+  self.column_names.each do |col_name|
+   attr_accessor col_name.to_sym
+ end
 end
